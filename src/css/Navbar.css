@@ -1,0 +1,42 @@
+ nav {
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    width: 100%;
+    opacity: 0;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 1rem;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+nav ul li a:hover {
+    transform: translateY(-3px);
+    font-size: 1.3rem;
+    transition-duration: 0.2s;
+}
+
+.light-font {
+    color: black;
+    transition-duration: 0.2s;
+}
+
+.dark-font {
+    color: white;
+    transition-duration: 0.4s;
+}

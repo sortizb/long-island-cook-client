@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import './css/Navbar.css';
+import { Navbar } from './modules/sub-modules/Navbar';
+import {useEffect, useRef, useState, useMemo} from 'react';
 
-function App() {
+export default function App() {
+
+    const refDark = useRef(null);
+    const isInDark= useIsInViewport(refDark);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar isInDark={isInDark}/>
+      <section className="slide-1" id='home'>
+        <div className='header-container'>
+          <h1 className='header slideToTop'>Long Island Cook</h1>
+          <h3 className='slogan fadeInDelayed'>Eat healthier & Learn to Cook</h3>
+        </div>
+      </section>
+      <section className='slide-2' id='food-types' ref={refDark}>
+      </section>
+    </>
+    
   );
 }
 
-export default App;
+function useIsInViewport(ref) {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  const observer = useMemo(
+    () =>
+      new IntersectionObserver(([entry]) =>
+        setIsIntersecting(entry.isIntersecting),
+      ),
+    [],
+  );
+
+  useEffect(() => {
+    observer.observe(ref.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref, observer]);
+
+  return isIntersecting;
+}

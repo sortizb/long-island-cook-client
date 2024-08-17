@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+/* Utility Classes */
+
+.slideToTop {
+  animation: slideToTop 1s ease-in-out;
+}
+
+.fadeInDelayed {
+  animation: fadeInDelayed 1.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.animation--delay {
+  animation-delay: 0.8s;
+}
+
+/* General CSS */
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100.01vh;
+}
+
+/* Slide 1 or Home */
+
+.slide-1 {
+  background-image: url('../resources/wooden-background.jpg');
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  background-color: white;
+  scroll-snap-align: end;
+  scroll-snap-stop: always;
+}
+
+.header-container {
+  text-align: center;
+  transform: translateY(10rem);
+}
+
+.header {
+  font-size: 10rem;
+}
+
+.slogan {
+  font-size: 4rem;
+  transform: translateY(-8rem);
+}
+
+
+/* Slide 2 */
+
+.slide-2 {
+  background-image: url("../resources/smooth-plain-blackmarble-texture.jpg");
+  background-color: black;
+  scroll-snap-align: end;
+  scroll-snap-stop: always;
+}
+
+
+
+/* Animations */
+
+@keyframes slideToTop {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDelayed {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  } 
+
+  100% {
+    opacity: 1;
+  }
+}
