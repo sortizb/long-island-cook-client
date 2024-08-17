@@ -17,11 +17,6 @@
 
 /* General CSS */
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
 section {
   align-items: center;
   justify-content: center;

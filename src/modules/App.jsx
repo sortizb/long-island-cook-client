@@ -1,6 +1,6 @@
-import './css/App.css';
-import './css/Navbar.css';
-import { Navbar } from './modules/sub-modules/Navbar';
+import '../css/App.css';
+import '../css/Navbar.css';
+import { Navbar } from './sub-modules/Navbar';
 import {useEffect, useRef, useState, useMemo} from 'react';
 
 export default function App() {
