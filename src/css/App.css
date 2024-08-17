@@ -57,6 +57,7 @@ section {
   background-color: black;
   scroll-snap-align: end;
   scroll-snap-stop: always;
+  display: flex;
 }
 
 
